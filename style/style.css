@@ -1,0 +1,167 @@
+body {
+  font-family: sans-serif;
+}
+/* Homepage */
+.main-content {
+  min-width: 800px;
+  max-width: 1400px;
+  height: 100%;       
+  margin: auto;
+  padding-top: 50px;
+  width: 100%;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  height: 100%;
+  
+}
+
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+/*---------------------------------------------nav-bar-----------------------------------------------*/
+   /*TOP BAR*/
+   .navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+    padding: 5px;
+    min-width: 900px;
+  }
+   
+/*---------------------------------------------table-----------------------------------------------*/
+
+  button {
+    border: 0px;
+    background-color: null; 
+  }
+
+
+    /*white box*/
+   .jumbotron {
+       background-color: white;
+       padding: 0px;
+       height: 350px; 
+   }
+   .no-padding {
+     padding: 0px;
+   }
+
+   .classstyle {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+      padding: 0;
+      align-items: center; 
+      text-align: center;
+      margin: 0;
+      border: 1px solid white;
+      border-radius: 5px;
+      background: gray;
+      color: white;
+   }
+
+   .timeperiod {
+      display: inline-block;
+      text-align: left;
+      padding: 10px 0 10px 0;
+      color: #000000;
+      font-size: 20px;
+   }
+   .daystyle {
+      display: inline-block;
+      font-size: 20px;
+      text-align:right;
+      width: 90%;
+      padding:20px 0px 0px 0px;
+      height: 100%;
+   }
+
+   .my-table > div {
+     min-width: 800px;
+     /* padding: 0 !important; */
+   }
+
+   .blackline {
+      border-bottom: 1px solid lightgray;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+   }
+   .col-xs-2 {
+     padding: 0;
+   }
+
+/*---------------------------------------------search panel-----------------------------------------------*/
+   .input-group{
+      margin: 0px 30px 10px 30px;
+   }
+
+   .panel-default {
+      box-shadow: 1px 1px 1.5px lightgrey;
+      margin-left: 15px;
+      height: 700px; 
+      overflow: scroll;
+      padding: 30px 15px 15px 15px;
+   }
+   .selectstyle {
+     z-index: 999 !important;
+   }
+
+   .resultstyle {
+    text-align: right !important;
+    font-size: 12px; 
+    color: gray;
+    margin: 0px 0px 10px 0px;
+   }
+
+  .list-group.item {
+    padding: 0px !important;
+  }
+
+   .courseNostyle {
+     font-size: 18px;
+     text-align: left !important; 
+     padding: 0px;
+     display: inline;
+     font-weight: bold;
+
+   }
+
+   .namestyle {
+    font-size: 16px;
+    text-align: left !important; 
+    padding: 0 0 0 10px;
+    display: inline;
+    font-weight: bold;
+
+   }
+
+   .checkbuttonstyle {
+     float: right;
+   }
+
+
+
+/*---------------------------------------------somethingggggg-----------------------------------------------*/
+   /* On small screens, set height to 'auto' for sidenav and grid */
+   @media screen and (max-width: 800px) {
+     .sidenav {
+       height: 0px;
+       padding: 15px;
+     }
+     .row.content {height:100%;}
+   }
+
+
+
+   .App-intro {
+     font-size: large;
+   }
+
+   @keyframes App-logo-spin {
+     from { transform: rotate(0deg); }
+     to { transform: rotate(360deg); }
+   }

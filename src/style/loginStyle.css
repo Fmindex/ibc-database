@@ -1,0 +1,134 @@
+
+/*====== Start SigIn ======*/
+.signin-container {
+    background-color: white;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    padding-top: 80px;
+    font-family: 'Ubuntu', sans-serif;
+    direction: ltr;
+}
+.signin{
+    background: #215B63;
+    
+    color:#fff;
+    padding: 7px 10px;
+    overflow: hidden;
+}
+.signin .logo{
+    float: left;
+    width: 40%;
+    text-align: center;
+}
+.signin .logo h2{
+    letter-spacing: 1px;
+    font-size: 28px;
+}
+.signin .logo h2 span{letter-spacing: -2px;}
+.signin .frm{
+    float: right;
+    margin-right: 94px;
+    margin-top: 22px;
+}
+.signin .frm input{
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 9px 11px;
+    border: none;
+    outline: 0;
+    border-radius: 3px;
+    width: 30%;
+}
+.signin .frm input[type=submit]{
+    color: #fff;
+    padding: 8px 18px;
+    font-size: 15px;
+    font-weight: bold;
+    background: #2098b3;
+    cursor: pointer;
+    width: 19%;
+}
+.signin .frm input[type=submit]:hover{
+    background:#21abca;
+}
+/*====== End SigIn ======*/
+.signup{
+    width: 400px;
+    margin: auto;
+    background-color: #FFF;
+    padding: 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    overflow: hidden;
+}
+.signup > h1{
+    text-align: center;
+    font-size: 33px;
+    color: #757575;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+.signup > input{
+    display: block;
+}
+
+.signup .row input,
+.signup .row input{
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 75%;
+}
+.signup input{
+    height: 50px;
+    display: block;
+    padding: 10px 10px 0px 10px;
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+    margin-left: 9px;
+    margin-top: 10px;
+    width: 257px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.signup input:hover{
+    border-bottom-color: #dcdcdc;
+}
+.signup input:focus{
+    outline: none;
+    border-bottom-color: #58c791;
+}
+.signup button{
+    width: 257px;
+    position: relative;
+    margin: 37px auto;
+    position: relative;
+    height: 50px;
+    display: block;
+    border-radius:5px;
+    border: none;
+    background-color: #555555;
+    color:#fff;
+    font-size: 23px;
+    padding: 0;
+}
+.signup button:hover{
+    
+    cursor: pointer;
+}
+.signup button:active{
+    top:5px;
+    box-shadow: none;
+}
+/*====== Start Footer ======*/
+
+footer{
+    background-color: #215B63;
+    text-align: center;
+    padding: 10px;
+    color:#fff;
+}
+
+/*====== End Footer ======*/
