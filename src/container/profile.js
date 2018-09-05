@@ -18,7 +18,7 @@ export default class Profile extends Component {
                 </div>
               </Box>
             ))}
-            <Box align="center">
+            <Box align="center" mt={4}>
               <RaisedButton
                 label="Edit"
                 primary={true}
