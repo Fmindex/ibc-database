@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import { userInfo } from 'os';
-
+import { Flex, Box } from 'rebass';
 class ShowList extends Component {
   state = {
     editedInfo: this.props.userInfo,
@@ -40,33 +40,38 @@ class ShowList extends Component {
     //       alert('SUCCESS!');
     //     }
     //   });
-    this.props.onSubmit();
+
+    this.props.onSubmit(this.state.editedInfo);
   };
 
   render() {
     const { editedInfo } = this.state;
     return (
-      <div style={{ overflow: 'scroll', padding: '32px', fontSize: '16px' }}>
-        {this.props.columnData.map(item => (
-          <div className="row">
-            {item.text} :
-            <TextField
-              hintText="ex. 2110101"
-              onChange={i => this.handleUpdateInput(item['value'], i.target.value)}
-              value={editedInfo[item.value]}
-              style={{ marginLeft: '16px' }}
+      <div style={{ overflow: 'scroll', fontSize: '16px' }}>
+        <Flex flexWrap="wrap" mt={4} my={3}>
+          {this.props.columnData.map(item => (
+            <Box width={1 / item.w} my={2} px={3}>
+              <div style={{ fontSize: '14px', color: 'grey' }}>{item.text}</div>
+              <TextField
+                hintText="type something"
+                onChange={i => this.handleUpdateInput(item['value'], i.target.value)}
+                value={editedInfo[item.value]}
+                style={{ fontFamily: 'Courier New', width: '100%', fontWeight: 'bold' }}
+              />
+            </Box>
+          ))}
+        </Flex>
+        <Flex justifyContent="flex-end" mb={4} my={3}>
+          <Box align="right" mx={3}>
+            <RaisedButton
+              label="Cancel"
+              primary={true}
+              onClick={() => this.props.onCancel('Profile')}
+              style={{ marginRight: '16px' }}
             />
-          </div>
-        ))}
-        <div className="row" style={{ marginLeft: '64px' }}>
-          <RaisedButton
-            label="Cancel"
-            primary={true}
-            onClick={() => this.props.onCancel('Profile')}
-          />
-
-          <RaisedButton label="Submit" primary={true} onClick={() => this.handleSubmit()} />
-        </div>
+            <RaisedButton label="Submit" primary={true} onClick={() => this.handleSubmit()} />
+          </Box>
+        </Flex>
       </div>
     );
   }

@@ -31,7 +31,7 @@ class DashboardStudent extends Component {
         fname: 'ekkalak',
         lname: 'leelasornchai',
         nname: 'fm',
-        address: '',
+        address: 'adsfvbfdgedasdgnhmfyjnhtdgfsdftyjgh',
         road: '',
         subdistrict: '',
         district: '',
@@ -64,26 +64,117 @@ class DashboardStudent extends Component {
         gender: '',
         position: '',
       },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
+
+      {
+        intNo: '',
+        fname: 'jiraphat',
+        lname: 'khupanit',
+        nname: 'focus',
+      },
     ],
     resultList: [],
     columnData: [
-      { value: 'intNo', text: 'Intania' },
-      { value: 'fname', text: 'FirstName' },
-      { value: 'lname', text: 'Lastname' },
-      { value: 'nname', text: 'Nickname' },
-      { value: 'address', text: 'Address' },
-      { value: 'road', text: 'Street' },
-      { value: 'subdistrict', text: 'Subdistrict' },
-      { value: 'district', text: 'District' },
-      { value: 'province', text: 'Province' },
-      { value: 'PostCode', text: 'Zipcode' },
-      { value: 'homeNo', text: 'Home nu' },
-      { value: 'telNo', text: 'Tel.' },
-      { value: 'telNo2', text: 'Tel.2' },
-      { value: 'Email', text: 'Email' },
-      { value: 'workplace', text: 'Work' },
-      { value: 'gender', text: 'Gender' },
-      { value: 'position', text: 'Position Player' },
+      { value: 'intNo', text: 'Intania', w: 2 },
+      { value: 'nname', text: 'Nickname', w: 2 },
+      { value: 'fname', text: 'FirstName', w: 2 },
+      { value: 'lname', text: 'Lastname', w: 2 },
+      { value: 'address', text: 'Address', w: 1 },
+      { value: 'road', text: 'Street', w: 2 },
+      { value: 'subdistrict', text: 'Subdistrict', w: 2 },
+      { value: 'district', text: 'District', w: 2 },
+      { value: 'province', text: 'Province', w: 2 },
+      { value: 'PostCode', text: 'Zipcode', w: 2 },
+      { value: 'homeNo', text: 'Home Number', w: 2 },
+      { value: 'telNo', text: 'Tel.', w: 2 },
+      { value: 'telNo2', text: 'Tel.2', w: 2 },
+      { value: 'Email', text: 'Email', w: 2 },
+      { value: 'workplace', text: 'Work', w: 2 },
+      { value: 'gender', text: 'Gender', w: 2 },
+      { value: 'position', text: 'Position Player', w: 2 },
       // { value: 'status', text: 'status' },
     ],
   };
@@ -145,56 +236,71 @@ class DashboardStudent extends Component {
   render = () => {
     const { userInfo, mode, list, resultList, columnData } = this.state;
     return (
-      <div className="row" style={{ height: '80%', fontSize: '24px', marginTop: '50px' }}>
-        <div className="col-md-4 sidenav" style={{ height: '94vh', paddingLeft: '32px' }}>
-          <div style={{ width: '100%', textAlign: 'center', paddingTop: '48px' }}>Student Menu</div>
+      <div
+        className=" sidenav"
+        style={{
+          fontSize: '24px',
+          marginTop: '20px',
+          height: '80vh',
+          display: 'flex',
+          justifyContent: 'space-between',
+          backgroundColor: '#FFFFFF',
+        }}
+      >
+        <div
+          className="col-md-4 "
+          style={{ overflow: 'scroll', height: '100%', padding: '24px 16px' }}
+        >
           <div className="input-group" style={{ margin: 0 }}>
             <span className="input-group-addon">
-              <i className="glyphicon glyphicon-tag" />
+              <i className="glyphicon glyphicon-search" />
             </span>
             <input
               style={{ borderLeftTopRadius: 0, borderLeftBottomRadius: 0 }}
               type="text"
               className="form-control"
               ref="courseNo"
-              placeholder="Course NO. : 88888888"
+              placeholder="what's your name?"
               value={this.state.courseNo}
               onChange={data => this.handleSearch(data)}
             />
           </div>
-          <Divider />
           <List>
             {resultList.map(item => (
-              <ListItem
-                primaryText={item.nname + '  ' + item.fname + '  ' + item.lname}
-                onClick={() => this.handleListClicked(item)}
-              />
+              <ListItem onClick={() => this.handleListClicked(item)}>
+                <div style={{ fontFamily: 'Courier New' }}>
+                  <div style={{ display: 'inline', fontWeight: 'bold' }}>{item.nname + '  '}</div>
+                  {item.fname + '  ' + item.lname}
+                </div>
+              </ListItem>
             ))}
           </List>
         </div>
-        <div className="col-md-8" style={{ paddingRight: '32px' }}>
-          <Card>
-            {
-              <CardText style={{ height: '78vh', width: '100%' }}>
-                {/* {this.state.mode === '' && <SearchPanel />} */}
-                {this.state.mode === 'Profile' && (
-                  <UserProfile
-                    userInfo={userInfo}
-                    onModeChange={this.handleModeChanged}
-                    columnData={columnData}
-                  />
-                )}
-                {this.state.mode === 'Edit' && (
-                  <Grade
-                    userInfo={userInfo}
-                    onCancel={this.handleModeChanged}
-                    onSubmit={this.handleEdit}
-                    columnData={columnData}
-                  />
-                )}
-              </CardText>
-            }
-          </Card>
+        <div
+          className="col-md-8 "
+          style={{
+            overflow: 'scroll',
+            height: '100%',
+            marginLeft: '0px',
+            borderLeft: '1px solid lightgrey',
+          }}
+        >
+          {this.state.mode === '' && <SearchPanel />}
+          {this.state.mode === 'Profile' && (
+            <UserProfile
+              userInfo={userInfo}
+              onModeChange={this.handleModeChanged}
+              columnData={columnData}
+            />
+          )}
+          {this.state.mode === 'Edit' && (
+            <Grade
+              userInfo={userInfo}
+              onCancel={this.handleModeChanged}
+              onSubmit={this.handleEdit}
+              columnData={columnData}
+            />
+          )}
         </div>
       </div>
     );

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rebass/mdx": "^1.0.0",
     "axios": "^0.18.0",
     "material-ui": "^0.20.0",
     "react": "^15.5.4",
@@ -10,6 +11,7 @@
     "react-dom": "^15.5.4",
     "react-select": "^1.2.1",
     "react-tap-event-plugin": "^3.0.2",
+    "rebass": "^2.1.0",
     "universal-cookie": "^2.1.2"
   },
   "devDependencies": {

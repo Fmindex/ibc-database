@@ -1,39 +1,31 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
+import { Flex, Box } from 'rebass';
 import RaisedButton from 'material-ui/RaisedButton';
 
 export default class Profile extends Component {
   render = () => {
     return (
-      <div className="col-xs-12" style={{ overflow: 'scroll', height: '100%' }}>
-        <Table>
-          <TableBody displayRowCheckbox={false}>
+      <div>
+        <div style={{ overflow: 'scroll', height: '100%', fontSize: '18px', padding: '24px 16px' }}>
+          <Flex flexWrap="wrap" justifyContent="flex-end">
             {this.props.columnData.map(item => (
-              <TableRow>
-                <TableRowColumn style={{ fontSize: 16, width: 150 }}>{item.text} :</TableRowColumn>
-                <TableRowColumn style={{ fontSize: 16 }}>
+              <Box width={1 / item.w} my={3}>
+                <div style={{ color: 'grey', display: 'inline' }}> {item.text} : </div>
+                <div style={{ display: 'inline', fontWeight: 'bold' }}>
                   {this.props.userInfo[item.value] ? this.props.userInfo[item.value] : undefined}
-                </TableRowColumn>
-              </TableRow>
+                </div>
+              </Box>
             ))}
-          </TableBody>
-        </Table>
-
-        <div className="row" style={{ marginLeft: '64px' }}>
-          <RaisedButton
-            label="Edit"
-            primary={false}
-            onClick={() => this.props.onModeChange('Edit')}
-          />
+            <Box align="center">
+              <RaisedButton
+                label="Edit"
+                primary={true}
+                onClick={() => this.props.onModeChange('Edit')}
+              />
+            </Box>
+          </Flex>
         </div>
       </div>
     );
