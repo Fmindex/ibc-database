@@ -134,7 +134,7 @@ class DashboardStudent extends Component {
           height: '80vh',
           display: 'flex',
           justifyContent: 'space-between',
-          backgroundColor: '#FFFFFF',
+          backgroundColor: 'rgba(256,256,256,0.8)',
         }}
       >
         <div
@@ -172,7 +172,8 @@ class DashboardStudent extends Component {
             overflow: 'scroll',
             height: '100%',
             marginLeft: '0px',
-            borderLeft: '1px solid lightgrey',
+            backgroundColor: 'rgba(256,256,256,0.9)',
+            // borderLeft: '1px solid grey',
           }}
         >
           {this.state.mode === '' && <SearchPanel />}

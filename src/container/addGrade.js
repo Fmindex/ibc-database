@@ -53,7 +53,6 @@ class ShowList extends Component {
             <Box width={1 / item.w} my={2} px={3}>
               <div style={{ fontSize: '14px', color: 'grey' }}>{item.text}</div>
               <TextField
-                hintText="type something"
                 onChange={i => this.handleUpdateInput(item['value'], i.target.value)}
                 value={editedInfo[item.value]}
                 style={{ fontFamily: 'Courier New', width: '100%', fontWeight: 'bold' }}
