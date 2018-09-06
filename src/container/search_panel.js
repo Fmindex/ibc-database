@@ -25,10 +25,21 @@ class SearchPanel extends Component {
           height: '100%',
           fontSize: '100px',
           textAlign: 'center',
-          paddingTop: '100px',
+          paddingTop: '150px',
         }}
       >
-        BY FMMMMMMMMM KUYYYYYYYY
+        บาสนายช่าง
+        <div
+          style={{
+            overflow: 'scroll',
+            height: '100%',
+            fontSize: '32px',
+            textAlign: 'center',
+            paddingTop: '0px',
+          }}
+        >
+          9/9/2561
+        </div>
       </div>
     );
   }

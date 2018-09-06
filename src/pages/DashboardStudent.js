@@ -124,7 +124,7 @@ class DashboardStudent extends Component {
     });
   };
   render = () => {
-    const { userInfo, mode, list, resultList, columnData } = this.state;
+    const { userInfo, list, resultList, columnData, mode } = this.state;
     return (
       <div
         className=" sidenav"
@@ -164,6 +164,19 @@ class DashboardStudent extends Component {
                 </div>
               </ListItem>
             ))}
+            <ListItem onClick={() => this.handleModeChanged('Add')}>
+              <div
+                style={{
+                  fontFamily: 'Courier New',
+                  textAlign: 'center',
+                }}
+              >
+                <i className="glyphicon glyphicon-plus" />
+                <div style={{ display: 'inline', fontWeight: 'bold', paddingLeft: '16px' }}>
+                  Add new member
+                </div>
+              </div>
+            </ListItem>
           </List>
         </div>
         <div
@@ -176,20 +189,30 @@ class DashboardStudent extends Component {
             // borderLeft: '1px solid grey',
           }}
         >
-          {this.state.mode === '' && <SearchPanel />}
-          {this.state.mode === 'Profile' && (
+          {mode === '' && <SearchPanel />}
+          {mode === 'Profile' && (
             <UserProfile
               userInfo={userInfo}
               onModeChange={this.handleModeChanged}
               columnData={columnData}
             />
           )}
-          {this.state.mode === 'Edit' && (
+          {mode === 'Edit' && (
             <Grade
               userInfo={userInfo}
               onCancel={this.handleModeChanged}
               onSubmit={this.handleEdit}
               columnData={columnData}
+              mode={mode}
+            />
+          )}
+          {mode === 'Add' && (
+            <Grade
+              userInfo={{}}
+              onCancel={this.handleModeChanged}
+              onSubmit={this.handleEdit}
+              columnData={columnData}
+              mode={mode}
             />
           )}
         </div>

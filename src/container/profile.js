@@ -8,7 +8,14 @@ export default class Profile extends Component {
   render = () => {
     return (
       <div>
-        <div style={{ overflow: 'scroll', height: '100%', fontSize: '18px', padding: '24px 16px' }}>
+        <div
+          style={{
+            overflow: 'scroll',
+            height: '100%',
+            fontSize: '18px',
+            padding: '24px 16px 16px 16px',
+          }}
+        >
           <Flex flexWrap="wrap" justifyContent="flex-end">
             {this.props.columnData.map(item => (
               <Box width={1 / item.w} my={3}>
@@ -18,7 +25,7 @@ export default class Profile extends Component {
                 </div>
               </Box>
             ))}
-            <Box align="center" mt={4}>
+            <Box align="center" mt={3}>
               <RaisedButton
                 label="Edit"
                 primary={true}

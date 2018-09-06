@@ -65,7 +65,7 @@ class ShowList extends Component {
             <RaisedButton
               label="Cancel"
               primary={true}
-              onClick={() => this.props.onCancel('Profile')}
+              onClick={() => this.props.onCancel(this.props.mode === 'Edit' ? 'Profile' : '')}
               style={{ marginRight: '16px' }}
             />
             <RaisedButton label="Submit" primary={true} onClick={() => this.handleSubmit()} />
