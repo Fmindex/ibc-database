@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Cookies from 'universal-cookie';
 import { Flex, Box } from 'rebass';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -13,7 +12,7 @@ export default class Profile extends Component {
             overflow: 'scroll',
             height: '100%',
             fontSize: '18px',
-            padding: '24px 16px 16px 16px',
+            padding: '16px',
           }}
         >
           <Flex flexWrap="wrap" justifyContent="flex-end">
@@ -25,7 +24,7 @@ export default class Profile extends Component {
                 </div>
               </Box>
             ))}
-            <Box align="center" mt={3}>
+            <Box align="center" mt={1}>
               <RaisedButton
                 label="Edit"
                 primary={true}

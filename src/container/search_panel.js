@@ -1,20 +1,8 @@
 import 'react-select/dist/react-select.css';
 
 import React, { Component } from 'react';
-import axios from 'axios';
 import Select from 'react-select';
 import RaisedButton from 'material-ui/RaisedButton';
-
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
-import Cookies from 'universal-cookie';
-import Schedule from './new_table';
 
 class SearchPanel extends Component {
   render() {

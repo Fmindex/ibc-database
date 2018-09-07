@@ -1,51 +1,36 @@
 import '../style/dashboard.css';
-
-import { Card, CardActions, CardHeader, CardMedia, CardText, CardTitle } from 'material-ui/Card';
 import { List, ListItem } from 'material-ui/List';
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import ActionDescription from 'material-ui/svg-icons/action/description';
-import ActionPayment from 'material-ui/svg-icons/action/payment';
-import ActionSchedule from 'material-ui/svg-icons/action/schedule';
-import ActionUser from 'material-ui/svg-icons/action/face';
-import ActionToc from 'material-ui/svg-icons/action/toc';
-// import Grade from '../container/grade';
-import HomePage from './HomePage';
-import Request from '../container/request';
-import Payment from '../container/payment';
 import UserProfile from '../container/profile';
 import SearchPanel from '../container/search_panel';
-import SocialSchool from 'material-ui/svg-icons/social/school';
-import Table from '../container/new_table';
-import Divider from 'material-ui/Divider/Divider';
 import Grade from '../container/addGrade';
 
 class DashboardStudent extends Component {
+  mock = {
+    intNo: '',
+    nname: '',
+    fname: '',
+    lname: '',
+    address: '',
+    road: '',
+    subdistrict: '',
+    district: '',
+    province: '',
+    PostCode: '',
+    homeNo: '',
+    telNo: '',
+    telNo2: '',
+    Email: '',
+    workplace: '',
+    gender: '',
+    position: '',
+  };
   state = {
     userInfo: {},
     mode: '',
-    list: [
-      {
-        intNo: '',
-        fname: 'ekkalak',
-        lname: 'leelasornchai',
-        nname: 'fm',
-        address: 'adsfvbfdgedasdgnhmfyjnhtdgfsdftyjgh',
-        road: '',
-        subdistrict: '',
-        district: '',
-        province: '',
-        PostCode: '',
-        homeNo: '',
-        telNo: '',
-        telNo2: '',
-        Email: '',
-        workplace: '',
-        gender: '',
-        position: '',
-      },
-    ],
+    list: [],
     resultList: [],
     columnData: [
       { value: 'intNo', text: 'Intania', w: 2 },
@@ -69,38 +54,38 @@ class DashboardStudent extends Component {
     ],
   };
 
-  componentDidMount() {
-    // axios.get('http://localhost:3000/course/all').then(res => {
-
-    // 	this.setState({
-    // 		courses: res.data.courses
-    // 	}, () => {
-    // 		let pickSection = [];
-    // 		res.data.courses.map((course, index) => {
-    // 			pickSection.push(course.sections[0].section_id);
-    // 		});
-    // 		this.setState({
-    // 			pickSection: pickSection
-    // 		}, () => this.updateResult());
-    // 	});
-    // });
+  async componentDidMount() {
+    const res = await axios.get('http://localhost:3000/student');
+    console.log(res.data);
     this.setState({
-      resultList: this.state.list,
+      resultList: res.data,
+      list: res.data,
     });
+    // for (let i = 0; i < res.data.length; i++) {
+    //   const refs = await axios.post('http://localhost:3000/student/edit', {
+    //     id: res.data[i].ID,
+    //     editedInfo: { id: i + 1 },
+    //   });
+    //   console.log(refs);
+    // }
   }
 
   handleSearch = data => {
     const keyword = data.target.value;
-    let temp = [];
+    console.log(keyword);
+    let temp = this.state.list;
     temp = this.state.list.filter(item => {
       return (
-        item.fname.includes(keyword) || item.lname.includes(keyword) || item.nname.includes(keyword)
+        (item.fname ? item.fname.includes(keyword) : false) ||
+        (item.lname ? item.lname.includes(keyword) : false) ||
+        (item.nname ? item.nname.includes(keyword) : false)
       );
     });
     this.setState({
       resultList: temp,
     });
   };
+
   handleListClicked = item => {
     this.setState({
       userInfo: item,
@@ -199,20 +184,22 @@ class DashboardStudent extends Component {
           )}
           {mode === 'Edit' && (
             <Grade
-              userInfo={userInfo}
+              userInfo={{ ...this.mock, ...userInfo }}
               onCancel={this.handleModeChanged}
               onSubmit={this.handleEdit}
               columnData={columnData}
               mode={mode}
+              mock={this.mock}
             />
           )}
           {mode === 'Add' && (
             <Grade
-              userInfo={{}}
+              userInfo={this.mock}
               onCancel={this.handleModeChanged}
               onSubmit={this.handleEdit}
               columnData={columnData}
               mode={mode}
+              nextId={list.length}
             />
           )}
         </div>
